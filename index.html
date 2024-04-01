@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>音频合成</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <h1>音频处理</h1>
+    <main>
+      <!-- 拼接 -->
+      <div class="group">
+        <div class="row">
+          <div class="label">音源 1</div>
+          <audio src="./assets/1.wav" controls />
+        </div>
+        <div class="row">
+          <div class="label">音源 2</div>
+          <audio src="./assets/2.wav" controls />
+        </div>
+        <div class="footer">
+          <div class="button" onclick="concat()">拼接</div>
+          <div id="concat"></div>
+        </div>
+      </div>
+      <!-- 合成 -->
+      <div class="group">
+        <div class="row">
+          <div class="label">音源 1</div>
+          <audio src="./assets/bg1.wav" controls />
+        </div>
+        <div class="row">
+          <div class="label">音源 2</div>
+          <audio src="./assets/bg2.wav" controls />
+        </div>
+        <div class="footer">
+          <div class="button" onclick="merge()">合成</div>
+          <div id="merge"></div>
+        </div>
+      </div>
+
+      <!-- 插入音效 -->
+      <div class="group">
+        <div class="row">
+          <div class="label">音源 1</div>
+          <audio src="./assets/bg2.wav" controls />
+        </div>
+        <div class="row">
+          <div class="label">音源 2</div>
+          <audio src="./assets/Hit.ogg" controls />
+        </div>
+        <div class="footer">
+          <div class="button" onclick="insert()">插入音效</div>
+          <div id="insert"></div>
+        </div>
+      </div>
+
+      <!-- 截取 -->
+      <div class="group">
+        <div class="row">
+          <div class="label">音源 1</div>
+          <audio src="./assets/viper.mp3" controls />
+        </div>
+        <div class="footer">
+          <div class="button" onclick="slice()">截取</div>
+          <div id="slice"></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="buttons">
+          <div class="button" onclick="mergeNotes()">音符音效</div>
+        </div>
+        <div id="result"></div>
+      </div>
+    </main>
+
+    <script src="./js/audioUtils.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
