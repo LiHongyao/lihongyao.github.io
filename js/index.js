@@ -10,6 +10,7 @@ const insertWrap = document.querySelector("#insert");
  * 拼接
  */
 async function concat() {
+  concatWrap.innerHTML = `<span class="loading">处理中，请勿重复点击...</span>`;
   const audioSrc = ["../assets/1.wav", "../assets/2.wav"];
   const blob = await audioUtils.concat(audioSrc);
   const src = URL.createObjectURL(blob);
@@ -20,6 +21,7 @@ async function concat() {
  * 合成
  */
 async function merge() {
+  mergeWrap.innerHTML = `<span class="loading">处理中，请勿重复点击...</span>`;
   const audioSrc = ["../assets/bg1.wav", "../assets/bg2.wav"];
   const blob = await audioUtils.merge(audioSrc);
   const src = URL.createObjectURL(blob);
@@ -30,6 +32,7 @@ async function merge() {
  * 截取
  */
 async function slice() {
+  sliceWrap.innerHTML = `<span class="loading">处理中，请勿重复点击...</span>`;
   const blob = await audioUtils.slice("../assets/viper.mp3", 0, 3);
   const src = URL.createObjectURL(blob);
   sliceWrap.innerHTML = `<audio src="${src}" controls></audio>`;
@@ -39,6 +42,7 @@ async function slice() {
  * 插入音效
  */
 async function insert() {
+  insertWrap.innerHTML = `<span class="loading">处理中，请勿重复点击...</span>`;
   // -- 异常处理
   const bgmSrc = "../assets/bg2.wav";
   const blob = await audioUtils.insertEffects(bgmSrc, [
@@ -100,6 +104,7 @@ async function insert() {
  * 音符音效
  */
 async function mergeNotes() {
+  wrap.innerHTML = `<span class="loading">处理中，请勿重复点击...</span>`;
   const blob = await audioUtils.mergeNotes([
     { midi: 60, duration: 0.05 },
     { midi: 62, duration: 0.05 },

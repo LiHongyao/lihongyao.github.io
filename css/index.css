@@ -7,6 +7,9 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
+.loading {
+  color: #444;
+}
 .group {
   width: 500px;
   padding: 20px 0;
